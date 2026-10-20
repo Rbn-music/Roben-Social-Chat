@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3167f5">
+  <title>Roben Social</title>
+  <style>
+    :root{--blue:#3167f5;--ink:#172033;--muted:#78839a;--line:#e8edf5;--bg:#f4f7fc}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px Arial,Helvetica,sans-serif}
+    header{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100% - 1050px)/2));position:sticky;top:0}
+    .brand{font-weight:800;font-size:23px;letter-spacing:-1px;color:var(--ink)}.brand b{color:var(--blue)}.badge{font-size:12px;color:#60708a;background:#f0f4ff;padding:9px 12px;border-radius:20px}
+    main{max-width:1050px;margin:28px auto;padding:0 16px}.hero{display:grid;grid-template-columns:1fr 390px;gap:35px;align-items:center;padding:30px 0 45px}
+    .eyebrow{font-size:11px;font-weight:bold;letter-spacing:2px;color:var(--blue)}h1{font-size:clamp(38px,6vw,62px);line-height:1.08;letter-spacing:-2px;margin:18px 0}h1 span{color:var(--blue)}
+    .intro{color:var(--muted);line-height:1.8;max-width:470px}.features{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.features span{font-size:12px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:20px}
+    .card,.post,.empty{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 12px 35px #1e32610a}.card h2{font-size:22px;margin:5px 0 18px}.tabs{display:flex;background:#f3f5fa;padding:4px;border-radius:10px;margin-bottom:18px}.tabs button{width:50%;padding:11px;border:0;border-radius:8px;background:transparent;font-weight:bold;color:var(--muted)}.tabs button.active{background:#fff;color:var(--blue);box-shadow:0 2px 7px #0000000a}
+    label{display:block;font-size:12px;font-weight:bold;margin:13px 0 7px}input,textarea{width:100%;border:1px solid #dfe5ef;border-radius:9px;padding:13px;font:14px Arial;outline:none}input:focus,textarea:focus{border-color:#7da0ff}.btn{width:100%;border:0;background:var(--blue);color:#fff;padding:14px;border-radius:10px;font-weight:bold;margin-top:16px;cursor:pointer}.note{font-size:11px;color:#8b96a9;line-height:1.6;margin:13px 0 0}.notice{display:none;padding:10px;border-radius:8px;background:#edf3ff;color:#284da9;font-size:12px;margin-top:12px;overflow-wrap:anywhere}
+    .feed{max-width:720px;margin:0 auto 70px}.feed-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 16px}.feed-title h2{font-size:25px;margin:0}.demo{font-size:11px;color:#687a9a}.post-compose{display:flex;gap:12px;margin-bottom:14px}.avatar{width:42px;height:42px;flex:0 0 42px;border-radius:14px;background:#e7edff;color:#315de5;display:grid;place-items:center;font-weight:bold}.compose-body{flex:1}.compose-body textarea{min-height:85px;resize:vertical;border:0}.compose-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f2f7;padding-top:12px;font-size:11px;color:#9aa4b6}.compose-bottom .btn{width:auto;margin:0;padding:11px 16px}.post{margin-bottom:14px;box-shadow:none}.post-top{display:flex;gap:10px;align-items:center}.post-top strong{font-size:13px}.post-top small{display:block;color:#98a2b4;margin-top:4px;font-size:10px}.post-body{line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;margin:18px 0}.actions{border-top:1px solid #f0f2f7;padding-top:12px;display:flex;gap:20px;color:#77839a;font-size:12px}.actions button{border:0;background:none;color:inherit;padding:0;cursor:pointer}.empty{text-align:center;color:var(--muted);box-shadow:none}.empty strong{display:block;color:var(--ink);margin:8px}.status{font-size:12px;color:var(--blue);min-height:16px;margin-top:10px}
+    footer{border-top:1px solid var(--line);padding:24px 16px;text-align:center;color:#98a2b4;font-size:11px}
+    @media(max-width:800px){main{margin-top:16px}.hero{grid-template-columns:1fr;gap:25px;padding:22px 0 35px}.card{max-width:500px;width:100%;margin:auto}h1{font-size:47px}.badge{font-size:10px}}
+    @media(max-width:480px){header{height:60px;padding:0 14px}.brand{font-size:20px}.hero{padding-top:15px}h1{font-size:42px}.card{padding:18px}.features{gap:7px}.features span{font-size:11px}.feed-title h2{font-size:22px}.post{padding:16px}}
+  </style>
+</head>
+<body>
+  <header><div class="brand">roben<b>social</b></div><div class="badge">🌍 Worldwide community</div></header>
+  <main>
+    <section class="hero">
+      <div><div class="eyebrow">YOUR WORLD, CLOSER</div><h1>Good people.<br><span>Real connections.</span></h1>
+        <p class="intro">Meet friends, share your moments, and join conversations from Malawi to the whole world.</p>
+        <div class="features"><span>🌍 Worldwide</span><span>💬 Conversations</span><span>🔒 Account security</span></div>
+      </div>
+      <section class="card" id="account-card">
+        <div class="eyebrow">JOIN THE COMMUNITY</div><h2 id="form-title">Create your account</h2>
+        <div class="tabs"><button id="signup-tab" class="active" type="button">Create account</button><button id="login-tab" type="button">Log in</button></div>
+        <form id="auth-form">
+          <div id="name-field"><label for="display-name">Display name</label><input id="display-name" placeholder="What should people call you?" maxlength="50"></div>
+          <label for="phone">Phone number (international format)</label><input id="phone" type="tel" placeholder="+265991234567" autocomplete="tel" required>
+          <label for="password">Password</label><input id="password" type="password" placeholder="At least 8 characters" minlength="8" required>
+          <button class="btn" id="auth-submit">Create my account →</button>
+        </form>
+        <div class="notice" id="notice"></div>
+        <p class="note">Demo version: this page does not yet save real accounts or send SMS. Connect a secure authentication/database service before public launch. Never use a real password on this demo.</p>
+      </section>
+    </section>
+    <section class="feed">
+      <div class="feed-title"><h2>Community feed</h2><span class="demo">FRONT-END DEMO</span></div>
+      <form class="post post-compose" id="post-form"><div class="avatar" id="avatar">R</div><div class="compose-body"><textarea id="post-text" maxlength="2000" placeholder="What would you like to share?" required></textarea><div class="compose-bottom"><span id="char-count">0/2000</span><button class="btn" type="submit">Publish post ↗</button></div></div></form>
+      <div class="status" id="post-status">Demo mode: posts stay in this browser only.</div>
+      <div id="posts"><div class="empty"><div style="font-size:28px">✧</div><strong>Your community starts here</strong>Write a post above to see how the feed works.</div></div>
+    </section>
+  </main>
+  <footer>roben social · Made to bring people closer · © 2026</footer>
+  <script>
+    const $ = id => document.getElementById(id);
+    let mode = 'signup';
+    let displayName = '';
+    function setMode(next) {
+      mode = next;
+      $('signup-tab').classList.toggle('active', mode === 'signup');
+      $('login-tab').classList.toggle('active', mode === 'login');
+      $('name-field').style.display = mode === 'signup' ? 'block' : 'none';
+      $('form-title').textContent = mode === 'signup' ? 'Create your account' : 'Welcome back';
+      $('auth-submit').textContent = mode === 'signup' ? 'Create my account →' : 'Log in →';
+      $('notice').style.display = 'none';
+    }
+    $('signup-tab').addEventListener('click', () => setMode('signup'));
+    $('login-tab').addEventListener('click', () => setMode('login'));
+    $('auth-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const phone = $('phone').value.trim(), password = $('password').value;
+      const notice = $('notice');
+      notice.style.display = 'block';
+      if (!phone.startsWith('+')) {
+        notice.textContent = 'Use international phone format, for example +265991234567.';
+        return;
+      }
+      if (password.length < 8) {
+        notice.textContent = 'Password must contain at least 8 characters.';
+        return;
+      }
+      if (mode === 'signup') {
+        displayName = $('display-name').value.trim() || 'New member';
+        $('avatar').textContent = displayName.charAt(0).toUpperCase();
+        notice.textContent = 'This is a visual demo only. Real account creation requires a secure authentication service.';
+      } else {
+        notice.textContent = 'This demo does not store real accounts yet. Connect authentication to enable login.';
+      }
+    });
+    $('post-text').addEventListener('input', () => $('char-count').textContent = $('post-text').value.length + '/2000');
+    $('post-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const text = $('post-text').value.trim();
+      if (!text) return;
+      const post = document.createElement('article');
+      post.className = 'post';
+      const top = document.createElement('div'); top.className = 'post-top';
+      const avatar = document.createElement('div'); avatar.className = 'avatar'; avatar.textContent = (displayName || 'R').charAt(0).toUpperCase();
+      const identity = document.createElement('div');
+      const strong = document.createElement('strong'); strong.textContent = displayName || 'Roben Social member';
+      const small = document.createElement('small'); small.textContent = 'Just now · Demo post';
+      identity.append(strong, small); top.append(avatar, identity);
+      const body = document.createElement('p'); body.className = 'post-body'; body.textContent = text;
+      const actions = document.createElement('div'); actions.className = 'actions';
+      const like = document.createElement('button'); like.type = 'button'; like.textContent = '♡ 0 Likes';
+      let liked = false; like.addEventListener('click', () => { liked = !liked; like.textContent = (liked ? '♥ 1 Like' : '♡ 0 Likes'); });
+      const comment = document.createElement('span'); comment.textContent = '▢ Comments demo';
+      const share = document.createElement('button'); share.type = 'button'; share.textContent = '↗ Share';
+      share.addEventListener('click', async () => { try { await navigator.clipboard.writeText(text); share.textContent = 'Copied!'; } catch { share.textContent = 'Copy unavailable'; } });
+      actions.append(like, comment, share); post.append(top, body, actions);
+      const list = $('posts'); if (list.querySelector('.empty')) list.innerHTML = ''; list.prepend(post);
+      $('post-text').value = ''; $('char-count').textContent = '0/2000'; $('post-status').textContent = 'Post added to this browser demo only.';
+    });
+  </script>
+</body>
+</html>
